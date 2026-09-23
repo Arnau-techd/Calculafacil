@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CalculaFácil — Calculadoras online gratis</title>
+<meta name="description" content="Calcula porcentajes, descuentos, IVA, edad, notas, propinas, conversiones y mucho más con herramientas online rápidas y gratuitas.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="/">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header"><div class="wrap nav">
+<a class="brand" href="#top">Calcula<span>Fácil</span></a>
+<nav><a href="#herramientas">Herramientas</a><a href="#categorias">Categorías</a><a href="#faq">FAQ</a></nav>
+<a class="navbtn" href="#herramientas">Empezar</a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap hero-grid">
+<div><div class="pill">✦ 100% GRATIS · SIN REGISTRO</div>
+<h1>Las cuentas difíciles.<br><em>Hechas fáciles.</em></h1>
+<p>Calculadoras rápidas, precisas y fáciles de usar para las cosas que necesitas resolver cada día.</p>
+<div class="hero-actions"><a class="primary" href="#herramientas">Explorar herramientas <span>→</span></a><a class="textbtn" href="#como">Cómo funciona</a></div>
+<div class="trust"><span>✓ Sin registro</span><span>✓ Resultados instantáneos</span><span>✓ Desde cualquier dispositivo</span></div>
+</div>
+<div class="hero-card"><div class="mini-top"><span>Resultado</span><span class="dot">●</span></div><div class="big-result">24,50 €</div><div class="muted">Precio final con 30% de descuento</div><div class="bar"><i></i></div><div class="mini-row"><span>Precio original</span><b>35,00 €</b></div><div class="mini-row"><span>Ahorras</span><b>10,50 €</b></div></div>
+</div></section>
+
+<section id="herramientas" class="wrap section">
+<div class="section-title"><div><div class="eyebrow">TODAS LAS HERRAMIENTAS</div><h2>¿Qué quieres calcular?</h2></div><div class="searchbox">⌕ <input id="search" placeholder="Buscar una herramienta..."></div></div>
+<div class="chips" id="chips"><button class="active" data-cat="all">Todas</button><button data-cat="mates">Matemáticas</button><button data-cat="dinero">Dinero</button><button data-cat="conversion">Conversiones</button><button data-cat="vida">Vida diaria</button></div>
+<div class="tools" id="tools">
+<article class="tool featured" data-cat="mates dinero" data-search="porcentaje porcentaje"><div class="tool-icon">%</div><div><h3>Porcentajes</h3><p>Calcula porcentajes de cualquier cantidad.</p></div><div class="fields"><input id="p1" type="number" placeholder="Cantidad"><input id="p2" type="number" placeholder="%"><button onclick="percentage()">Calcular</button><output id="pout"></output></div></article>
+<article class="tool" data-cat="dinero" data-search="descuento precio descuento"><div class="tool-icon">↘</div><h3>Descuento</h3><p>Calcula el precio final y cuánto ahorras.</p><div class="fields"><input id="d1" type="number" placeholder="Precio (€)"><input id="d2" type="number" placeholder="Descuento %"><button onclick="discount()">Calcular</button><output id="dout"></output></div></article>
+<article class="tool" data-cat="dinero" data-search="iva impuestos iva"><div class="tool-icon">€</div><h3>IVA</h3><p>Añade IVA a un precio rápidamente.</p><div class="fields"><input id="i1" type="number" placeholder="Precio (€)"><select id="ir"><option>21</option><option>10</option><option>4</option></select><button onclick="iva()">Calcular</button><output id="iout"></output></div></article>
+<article class="tool" data-cat="vida" data-search="edad cumpleaños edad"><div class="tool-icon">◷</div><h3>Edad</h3><p>Calcula tu edad actual.</p><div class="fields"><input id="birth" type="date"><button onclick="age()">Calcular</button><output id="aout"></output></div></article>
+<article class="tool" data-cat="mates" data-search="media notas promedio notas"><div class="tool-icon">✓</div><h3>Media de notas</h3><p>Calcula la media de varias notas.</p><div class="fields"><input id="grades" placeholder="7, 8.5, 6, 9"><button onclick="grades()">Calcular</button><output id="gout"></output></div></article>
+<article class="tool" data-cat="mates" data-search="regla tres proporciones"><div class="tool-icon">×</div><h3>Regla de tres</h3><p>Resuelve proporciones en segundos.</p><div class="fields split"><input id="ra" type="number" placeholder="A"><input id="rb" type="number" placeholder="B"></div><input id="rc" type="number" placeholder="C"><button onclick="rule()">Calcular</button><output id="rout"></output></article>
+<article class="tool" data-cat="dinero" data-search="propina restaurante propina"><div class="tool-icon">＋</div><h3>Propina</h3><p>Calcula la propina y el total.</p><div class="fields"><input id="t1" type="number" placeholder="Cuenta (€)"><input id="t2" type="number" placeholder="Propina %"><button onclick="tip()">Calcular</button><output id="tout"></output></div></article>
+<article class="tool" data-cat="conversion" data-search="euros dolares euro dolar"><div class="tool-icon">$</div><h3>EUR → USD</h3><p>Conversión orientativa de euros a dólares.</p><div class="fields"><input id="euro" type="number" placeholder="Euros"><button onclick="eurusd()">Convertir</button><output id="eout"></output></div></article>
+<article class="tool" data-cat="conversion" data-search="kilometros millas distancia"><div class="tool-icon">↔</div><h3>Km → Millas</h3><p>Convierte kilómetros en millas.</p><div class="fields"><input id="km" type="number" placeholder="Kilómetros"><button onclick="kmmi()">Convertir</button><output id="kout"></output></div></article>
+<article class="tool" data-cat="conversion" data-search="celsius fahrenheit temperatura"><div class="tool-icon">°</div><h3>°C → °F</h3><p>Convierte temperaturas.</p><div class="fields"><input id="cel" type="number" placeholder="Celsius"><button onclick="temp()">Convertir</button><output id="tempout"></output></div></article>
+<article class="tool" data-cat="mates" data-search="multiplicacion multiplicar"><div class="tool-icon">×</div><h3>Multiplicador</h3><p>Multiplica dos cantidades.</p><div class="fields split"><input id="m1" type="number" placeholder="A"><input id="m2" type="number" placeholder="B"></div><button onclick="mult()">Calcular</button><output id="mout"></output></article>
+<article class="tool" data-cat="dinero" data-search="ahorro ahorro porcentaje"><div class="tool-icon">↗</div><h3>Ahorro</h3><p>Calcula cuánto acumulas cada mes.</p><div class="fields split"><input id="s1" type="number" placeholder="€/mes"><input id="s2" type="number" placeholder="Meses"></div><button onclick="save()">Calcular</button><output id="sout"></output></article>
+</div>
+<div class="empty" id="empty">No encontramos ninguna herramienta con esa búsqueda.</div>
+</section>
+
+<section id="como" class="dark-section"><div class="wrap two"><div><div class="eyebrow light">SIMPLE POR DISEÑO</div><h2>Calcula. Comprueba.<br><span>Listo.</span></h2></div><div><p>Elige una herramienta, introduce tus datos y obtén el resultado al instante. Las operaciones se realizan directamente en tu navegador.</p><div class="steps"><div><b>01</b><span>Elige una calculadora</span></div><div><b>02</b><span>Introduce tus datos</span></div><div><b>03</b><span>Obtén el resultado</span></div></div></div></div></section>
+
+<section id="categorias" class="wrap section cats"><div class="eyebrow">CATEGORÍAS</div><h2>Herramientas para cada momento.</h2><div class="cat-grid"><div><span>01</span><h3>Matemáticas</h3><p>Operaciones, porcentajes, medias y proporciones.</p></div><div><span>02</span><h3>Dinero</h3><p>Precios, descuentos, IVA, propinas y ahorro.</p></div><div><span>03</span><h3>Conversiones</h3><p>Unidades y conversiones rápidas.</p></div><div><span>04</span><h3>Vida diaria</h3><p>Pequeñas cuentas que necesitas resolver.</p></div></div></section>
+
+<section id="faq" class="wrap faq"><div class="eyebrow">PREGUNTAS FRECUENTES</div><h2>Lo que necesitas saber.</h2><details><summary>¿Las calculadoras son gratis?</summary><p>Sí. Todas las herramientas disponibles en CalculaFácil están pensadas para utilizarse sin registro.</p></details><details><summary>¿Necesito instalar algo?</summary><p>No. Puedes utilizar la web desde un navegador en móvil, tablet u ordenador.</p></details><details><summary>¿Se guardan mis datos?</summary><p>Las calculadoras de esta versión realizan las operaciones en el navegador y no necesitan una cuenta.</p></details></section>
+</main>
+
+<footer><div class="wrap foot"><div><a class="brand" href="#top">Calcula<span>Fácil</span></a><p>Herramientas online claras, rápidas y gratuitas.</p></div><div class="flinks"><a href="sobre.html">Sobre nosotros</a><a href="contacto.html">Contacto</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="aviso-legal.html">Aviso legal</a></div></div><div class="wrap copyright">© 2026 CalculaFácil · Todos los derechos reservados.</div></footer>
+<script src="script.js"></script>
+</body></html>
